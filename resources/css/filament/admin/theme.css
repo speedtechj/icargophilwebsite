@@ -1,0 +1,310 @@
+@import '../../../../vendor/filament/filament/resources/css/theme.css';
+
+@source '../../../../app/Filament/**/*';
+@source '../../../../resources/views/filament/**/*';
+
+/* ---------- Sidebar: navy with amber highlights ---------- */
+.fi-sidebar {
+    background-color: var(--color-blue-950);
+    border-inline-end: 0;
+}
+
+/* logo area: logo on a white plate, like the website footer */
+.fi-sidebar-header {
+    background-color: var(--color-blue-950);
+    box-shadow: none;
+    border-bottom: 1px solid rgb(255 255 255 / 0.1);
+}
+.fi-sidebar-header .fi-logo {
+    background-color: #fff;
+    padding: 0.35rem 0.75rem;
+    border-radius: 0.75rem;
+}
+
+/* group titles: small amber capitals */
+.fi-sidebar-group-label {
+    color: var(--color-amber-400);
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+/* menu items: white text, rounded */
+.fi-sidebar-item-button {
+    border-radius: 0.75rem;
+    padding-block: 0.6rem;
+}
+.fi-sidebar-item-label,
+.fi-sidebar-item-icon {
+    color: rgb(255 255 255 / 0.85);
+}
+.fi-sidebar-item-button:hover {
+    background-color: rgb(255 255 255 / 0.08);
+}
+.fi-sidebar-item-button:hover .fi-sidebar-item-label,
+.fi-sidebar-item-button:hover .fi-sidebar-item-icon {
+    color: #fff;
+}
+
+/* active item: solid amber with navy text */
+.fi-sidebar-item.fi-active > .fi-sidebar-item-button {
+    background-color: var(--color-amber-400);
+}
+.fi-sidebar-item.fi-active .fi-sidebar-item-label,
+.fi-sidebar-item.fi-active .fi-sidebar-item-icon {
+    color: var(--color-blue-950);
+    font-weight: 700;
+}
+
+/* badge (e.g. new messages) stays readable on navy */
+.fi-sidebar .fi-badge {
+    font-weight: 700;
+}
+
+
+/* ---- hover fix: readable text on every state ---- */
+.fi-sidebar-item:not(.fi-active) :is(a, button):hover,
+.fi-sidebar-item:not(.fi-active) :is(a, button):focus-visible {
+    background-color: rgb(255 255 255 / 0.14) !important;
+}
+
+.fi-sidebar-item:not(.fi-active) :is(a, button),
+.fi-sidebar-item:not(.fi-active) :is(a, button) * {
+    color: rgb(255 255 255 / 0.9) !important;
+}
+
+.fi-sidebar-item:not(.fi-active) :is(a, button):hover,
+.fi-sidebar-item:not(.fi-active) :is(a, button):hover * {
+    color: #fff !important;
+}
+
+/* active item: amber with navy text, also when hovered */
+.fi-sidebar-item.fi-active :is(a, button),
+.fi-sidebar-item.fi-active :is(a, button):hover {
+    background-color: var(--color-amber-400) !important;
+}
+
+.fi-sidebar-item.fi-active :is(a, button),
+.fi-sidebar-item.fi-active :is(a, button) * {
+    color: var(--color-blue-950) !important;
+    font-weight: 700;
+}
+
+/* group titles and collapse arrows */
+.fi-sidebar-group-label { color: var(--color-amber-400) !important; }
+.fi-sidebar-group-button:hover { background-color: rgb(255 255 255 / 0.08) !important; }
+.fi-sidebar-group-button svg { color: rgb(255 255 255 / 0.7) !important; }
+
+/* logo on a white plate so it reads in dark and light mode */
+/* .fi-sidebar-header img,
+.fi-sidebar-header .fi-logo,
+.fi-simple-layout .fi-logo,
+.fi-simple-layout img[class*="logo"] {
+    background-color: #fff !important;
+    padding: 0.4rem 0.8rem !important;
+    border-radius: 0.75rem !important;
+    box-sizing: content-box;
+} */
+
+/* if the brand is plain text instead of an image, keep it white on navy */
+.fi-sidebar-header .fi-logo:not(img) {
+    background: transparent !important;
+    padding: 0 !important;
+    color: #fff;
+}
+
+
+/* ===== iCargo futuristic login ===== */
+.fi-simple-layout {
+    position: relative; isolation: isolate; min-height: 100vh; color: #fff;
+    background:
+        radial-gradient(1200px 700px at 78% 20%, #1b2a7a 0%, transparent 60%),
+        radial-gradient(900px 600px at 10% 90%, rgb(14 58 138 / 0.33) 0%, transparent 60%),
+        #0a1230 !important;
+}
+.fi-simple-layout::before {
+    content: ''; position: absolute; inset: 0; z-index: -1; pointer-events: none;
+    background-image:
+        linear-gradient(rgb(255 255 255 / 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgb(255 255 255 / 0.05) 1px, transparent 1px);
+    background-size: 44px 44px;
+    -webkit-mask-image: radial-gradient(ellipse at center, #000 30%, transparent 78%);
+            mask-image: radial-gradient(ellipse at center, #000 30%, transparent 78%);
+}
+
+.fi-simple-main-ctn { position: relative; z-index: 1; }
+@media (min-width: 1024px) {
+    .fi-simple-main-ctn { justify-content: flex-end; padding-inline-end: 2rem; }
+}
+
+.fi-simple-main {
+    max-width: 34rem; padding: 2.5rem !important; border-radius: 2rem !important;
+    border: 1px solid rgb(255 255 255 / 0.14) !important;
+    background: linear-gradient(145deg, rgb(255 255 255 / 0.10), rgb(255 255 255 / 0.04)) !important;
+    -webkit-backdrop-filter: blur(22px); backdrop-filter: blur(22px);
+    box-shadow: 0 30px 80px rgb(0 0 0 / 0.45), inset 0 1px 0 rgb(255 255 255 / 0.18) !important;
+    --tw-ring-shadow: 0 0 #0000 !important;
+}
+
+.fi-simple-header { align-items: flex-start !important; text-align: left !important; }
+.fi-simple-header-heading { color: #fff !important; font-size: 1.875rem; font-weight: 800; letter-spacing: -0.02em; text-align: left !important; }
+.fi-simple-header-subheading { color: rgb(255 255 255 / 0.6) !important; text-align: left !important; }
+.fi-simple-header .fi-logo, .fi-simple-layout .fi-logo { display: none !important; }
+
+.ic-card-logo { display: block; height: 3rem; width: auto; margin-bottom: 1.25rem; }
+@media (min-width: 1024px) { .ic-card-logo { display: none; } }
+.ic-badge {
+    display: inline-flex; align-items: center; gap: .5rem; margin-bottom: 1rem;
+    padding: .25rem .75rem; border-radius: 9999px; background: rgb(251 191 36 / 0.15); color: #fcd34d;
+    font-size: 11px; font-weight: 700; letter-spacing: .2em; text-transform: uppercase;
+}
+.ic-badge span { width: .375rem; height: .375rem; border-radius: 9999px; background: #fbbf24; }
+
+.fi-simple-main .fi-fo-field-label-content,
+.fi-simple-main label { color: rgb(255 255 255 / 0.75) !important; font-size: .75rem; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; }
+
+.fi-simple-main .fi-input-wrp {
+    background: rgb(255 255 255 / 0.07) !important; border: 1px solid rgb(255 255 255 / 0.14) !important;
+    border-radius: 1rem !important; box-shadow: none !important; --tw-ring-shadow: 0 0 #0000 !important;
+}
+.fi-simple-main .fi-input-wrp:focus-within { border-color: #fbbf24 !important; box-shadow: 0 0 0 4px rgb(251 191 36 / 0.25) !important; }
+.fi-simple-main .fi-input { color: #fff !important; padding-block: .85rem; -webkit-text-fill-color: #fff; }
+.fi-simple-main .fi-input::placeholder { color: rgb(255 255 255 / 0.4) !important; }
+.fi-simple-main .fi-input-wrp svg { color: #fcd34d !important; }
+.fi-simple-main input:-webkit-autofill { -webkit-text-fill-color: #fff; transition: background-color 9999s ease-in-out 0s; }
+
+.fi-simple-main a { color: #fcd34d !important; font-weight: 600; }
+.fi-simple-main .fi-fo-checkbox label span { color: rgb(255 255 255 / 0.7) !important; text-transform: none; letter-spacing: 0; font-size: .875rem; }
+
+.fi-simple-main .fi-btn {
+    width: 100%; padding-block: 1rem; border-radius: 1rem !important; font-weight: 800;
+    color: var(--color-blue-950) !important;
+    background: linear-gradient(90deg, #fbbf24, #f59e0b) !important;
+    box-shadow: 0 10px 30px rgb(251 191 36 / 0.35) !important;
+    transition: transform .2s, box-shadow .2s;
+}
+.fi-simple-main .fi-btn:hover { transform: translateY(-1px); box-shadow: 0 14px 36px rgb(251 191 36 / 0.45) !important; }
+
+.fi-simple-layout .fi-theme-switcher { display: none; }
+
+
+
+/* =========================================================
+   iCargo futuristic panel (dark)
+   ========================================================= */
+.dark .fi-body {
+    background:
+        radial-gradient(1000px 600px at 80% -10%, #1b2a7a 0%, transparent 60%),
+        radial-gradient(800px 500px at 0% 100%, rgb(14 58 138 / 0.35) 0%, transparent 60%),
+        #0a1230 !important;
+    background-attachment: fixed !important;
+}
+.dark .fi-main-ctn, .dark .fi-layout { background: transparent !important; }
+
+/* ---------- sidebar ---------- */
+.dark .fi-sidebar {
+    background: rgb(8 16 40 / 0.8) !important;
+    -webkit-backdrop-filter: blur(16px); backdrop-filter: blur(16px);
+    border-inline-end: 1px solid rgb(255 255 255 / 0.1) !important;
+}
+.dark .fi-sidebar-header { background: transparent !important; box-shadow: none !important; border-bottom: 0 !important; }
+.dark .fi-sidebar-group-label {
+    color: rgb(251 191 36 / 0.9) !important; font-size: .65rem; font-weight: 700;
+    letter-spacing: .22em; text-transform: uppercase;
+}
+.dark .fi-sidebar-item:not(.fi-active) :is(a, button),
+.dark .fi-sidebar-item:not(.fi-active) :is(a, button) * { color: rgb(255 255 255 / 0.72) !important; }
+.dark .fi-sidebar-item:not(.fi-active) :is(a, button):hover { background: rgb(255 255 255 / 0.10) !important; }
+.dark .fi-sidebar-item:not(.fi-active) :is(a, button):hover,
+.dark .fi-sidebar-item:not(.fi-active) :is(a, button):hover * { color: #fff !important; }
+.dark .fi-sidebar-item :is(a, button) { border-radius: .75rem; padding-block: .6rem; }
+.dark .fi-sidebar-item.fi-active :is(a, button) {
+    background: linear-gradient(90deg, #fbbf24, #f59e0b) !important;
+    box-shadow: 0 8px 24px rgb(251 191 36 / 0.35);
+}
+.dark .fi-sidebar-item.fi-active :is(a, button),
+.dark .fi-sidebar-item.fi-active :is(a, button) * { color: #0a1230 !important; font-weight: 700; }
+
+/* ---------- top bar ---------- */
+.dark .fi-topbar > nav, .dark .fi-topbar {
+    background: rgb(8 16 40 / 0.6) !important;
+    -webkit-backdrop-filter: blur(16px); backdrop-filter: blur(16px);
+    border-bottom: 1px solid rgb(255 255 255 / 0.1) !important; box-shadow: none !important;
+}
+
+/* ---------- page heading ---------- */
+.dark .fi-header-heading { font-size: 2.25rem; font-weight: 800; letter-spacing: -0.02em; color: #fff; }
+.dark .fi-header-subheading { color: rgb(255 255 255 / 0.55); }
+.dark .fi-breadcrumbs a, .dark .fi-breadcrumbs span { color: rgb(255 255 255 / 0.5); }
+
+/* ---------- glass cards ---------- */
+.dark .fi-section, .dark .fi-ta-ctn, .dark .fi-wi-stats-overview-stat, .dark .fi-wi-widget .fi-section {
+    background: linear-gradient(145deg, rgb(255 255 255 / 0.08), rgb(255 255 255 / 0.03)) !important;
+    border: 1px solid rgb(255 255 255 / 0.10) !important;
+    border-radius: 1.5rem !important;
+    box-shadow: 0 30px 80px rgb(0 0 0 / 0.35), inset 0 1px 0 rgb(255 255 255 / 0.12) !important;
+    -webkit-backdrop-filter: blur(20px); backdrop-filter: blur(20px);
+    --tw-ring-shadow: 0 0 #0000 !important;
+}
+
+/* stat cards */
+.dark .fi-wi-stats-overview-stat { border-radius: 1rem !important; }
+.dark .fi-wi-stats-overview-stat-label {
+    color: rgb(255 255 255 / 0.5) !important; font-size: .68rem; font-weight: 700;
+    letter-spacing: .18em; text-transform: uppercase;
+}
+.dark .fi-wi-stats-overview-stat-value {
+    color: #fff !important; font-weight: 800;
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+.dark .fi-wi-stats-overview-stat-description { color: rgb(255 255 255 / 0.45) !important; }
+
+/* ---------- tables ---------- */
+.dark .fi-ta-header-toolbar { padding: 1rem 1.25rem; border: 0 !important; }
+.dark .fi-ta-table thead tr, .dark .fi-ta-header-cell { background: transparent !important; }
+.dark .fi-ta-header-cell, .dark .fi-ta-header-cell * {
+    color: rgb(255 255 255 / 0.4) !important; font-size: .66rem; font-weight: 700;
+    letter-spacing: .16em; text-transform: uppercase;
+}
+.dark .fi-ta-row { border-color: rgb(255 255 255 / 0.07) !important; }
+.dark .fi-ta-cell { padding-block: .45rem; }
+.dark .fi-ta-row:hover, .dark .fi-ta-row:hover > .fi-ta-cell {
+    background: rgb(251 191 36 / 0.10) !important;
+}
+.dark .fi-ta-row:hover > .fi-ta-cell:first-child { box-shadow: inset 3px 0 0 #fbbf24; }
+.dark .fi-ta-footer, .dark .fi-pagination { border-top: 1px solid rgb(255 255 255 / 0.07) !important; background: transparent !important; }
+
+/* ---------- inputs ---------- */
+.dark .fi-input-wrp {
+    background: rgb(255 255 255 / 0.06) !important;
+    border: 1px solid rgb(255 255 255 / 0.12) !important;
+    border-radius: .85rem !important; box-shadow: none !important;
+    --tw-ring-shadow: 0 0 #0000 !important;
+}
+.dark .fi-input-wrp:focus-within { border-color: #fbbf24 !important; box-shadow: 0 0 0 4px rgb(251 191 36 / 0.22) !important; }
+
+/* ---------- buttons ---------- */
+.dark .fi-btn { border-radius: .85rem !important; font-weight: 700; }
+.dark .fi-btn.fi-color-primary:not(.fi-outlined) {
+    background: linear-gradient(90deg, #fbbf24, #f59e0b) !important;
+    color: #0a1230 !important;
+    box-shadow: 0 10px 30px rgb(251 191 36 / 0.4) !important;
+}
+
+/* ---------- toggles ---------- */
+.dark .fi-toggle[aria-checked="true"] {
+    background: linear-gradient(90deg, #fbbf24, #f59e0b) !important;
+    box-shadow: 0 0 14px rgb(251 191 36 / 0.5);
+}
+
+/* ---------- badges ---------- */
+.dark .fi-badge { border-radius: 9999px; font-weight: 700; }
+
+/* ---------- modals and dropdowns ---------- */
+.dark .fi-modal-window, .dark .fi-dropdown-panel {
+    background: #0c1740 !important;
+    border: 1px solid rgb(255 255 255 / 0.12) !important;
+    border-radius: 1.5rem !important;
+    box-shadow: 0 30px 80px rgb(0 0 0 / 0.5) !important;
+}
