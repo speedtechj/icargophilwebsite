@@ -28,7 +28,6 @@ class LegalPageResource extends Resource
     protected static ?int $navigationSort = 6;
     protected static ?string $navigationLabel = 'Privacy & Terms';
     protected static ?string $modelLabel = 'Privacy & Terms';
-
     public static function form(Schema $schema): Schema
     {
         return $schema->components([
