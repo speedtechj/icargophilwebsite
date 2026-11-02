@@ -95,7 +95,7 @@
                         1. What do you need help with? <span class="text-amber-600" aria-hidden="true">*</span>
                     </legend>
                     <div class="mt-2 grid grid-cols-2 gap-2 sm:grid-cols-3">
-                        @foreach (\App\Models\ContactMessage::topics() as $key => $label)
+                        @foreach (\App\Models\Contactmessage::topics() as $key => $label)
                             <label class="cursor-pointer" wire:key="topic-{{ $key }}">
                                 <input type="radio" wire:model.live="topic" value="{{ $key }}"
                                     class="peer sr-only">
@@ -114,7 +114,7 @@
                         2. Where is it going? <span class="font-normal text-slate-500">(optional)</span>
                     </legend>
                     <div class="mt-2 grid grid-cols-2 gap-2 sm:grid-cols-4">
-                        @foreach (\App\Models\ContactMessage::destinations() as $key => $label)
+                        @foreach (\App\Models\Contactmessage::destinations() as $key => $label)
                             <label class="cursor-pointer" wire:key="destination-{{ $key }}">
                                 <input type="radio" wire:model="destination" value="{{ $key }}"
                                     class="peer sr-only">
@@ -144,7 +144,7 @@
                                     <select id="box_size" wire:model="box_size"
                                         class="{{ $field }} {{ $ok }} appearance-none pr-12">
                                         <option value="">Select a box size</option>
-                                        @foreach (\App\Models\ContactMessage::boxSizes() as $value => $label)
+                                        @foreach (\App\Models\Contactmessage::boxSizes() as $value => $label)
                                             <option value="{{ $value }}">{{ $label }}</option>
                                         @endforeach
                                     </select>
@@ -202,7 +202,7 @@
                         <div class="relative flex">
                             <select id="reply_via" wire:model="reply_via"
                                 class="{{ $field }} {{ $ok }} appearance-none pr-12">
-                                @foreach (\App\Models\ContactMessage::replyOptions() as $key => $label)
+                                @foreach (\App\Models\Contactmessage::replyOptions() as $key => $label)
                                     <option value="{{ $key }}" wire:key="reply-{{ $key }}">
                                         {{ $label }}</option>
                                 @endforeach
